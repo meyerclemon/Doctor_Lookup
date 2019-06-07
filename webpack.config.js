@@ -19,14 +19,14 @@ module.exports = {
     new UglifyJsPlugin({sourceMap: true}),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Webpack Template',
+      title: 'Doctor Lookup',
       template: './src/index.html',
       inject: 'body'
     }),
     new CopyWebpackPlugin([
-      {from:'src/images',to:'images'} 
-    ]), 
-    new Dotenv() 
+      {from:'src/images',to:'images'}
+    ]),
+    new Dotenv()
   ],
   mode: 'development',
   module: {
