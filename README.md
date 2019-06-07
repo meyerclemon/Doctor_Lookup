@@ -2,9 +2,9 @@
 
 #### By **Maya Frame** 6/7/2019
 [![forthebadge](http://forthebadge.com/images/badges/made-with-javascript.svg)](http://forthebadge.com)
-[![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/uses-css.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/uses-html.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](http://forthebadge.com)
 
 ## Description
 As we all know, everybody needs to see a doctor sometimes. But finding a doctor that provides the services you need nearby can be time consuming. To facilitate this, we have created a website where users may enter a medical issue into a form, submit it, and receive a list of doctors in your city (Portland or Seattle depending on where you are) who can treat their medical issue.
