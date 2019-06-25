@@ -35,6 +35,7 @@ $ Create a file called .env and store the key there in the following format: exp
 # Install dependencies
 $ npm install
 # Run the app
+$ npm run build
 $ npm start
 ```
 
