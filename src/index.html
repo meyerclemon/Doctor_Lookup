@@ -17,13 +17,17 @@
       <h3>Find a better doctor today!</h3>
     </div>
     <h4>Enter a symptom or doctor name to find a doctor near you</h4>
-    <form id="search">
-      <label for="criteria"></label>
-      <input required id="criteria" type="text" placeholder="Symptom or doctor...">
-      <button type="submit">Find Doctors!</button>
+    <form id="searchCriteria">
+      <label for="docName">Doctor Name:</label>
+      <input id="docName" type="text" placeholder="Doctor name...">
+
+      <label for="symptom">Main symptom:</label>
+      <input id="symptom" type="text" placeholder="Your symptom">
+
+      <button type="submit" id="search">Find doctors</button>
     </form>
 
-    <div id="displayDocs"></div>
+    <div id="results"></div>
   </div>
 </body>
 </html>

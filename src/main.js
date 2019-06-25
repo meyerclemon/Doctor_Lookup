@@ -6,27 +6,36 @@ import { DoctorLookup } from './doctor-lookup';
 
 
 
-  $().ready(function() {
-    $('#search').submit(function(event) {
+$(document).ready(function() {
+    $('#searchCriteria').submit(function(event) {
       event.preventDefault();
-      $('#displayDocs').empty();
 
-      let criteria = $('#criteria').val();
-      let doctorLookup = new DoctorLookup();
-            return doctorLookup.getDoctors(criteria);
-    })
+     let doctorLookup = new DoctorLookup();
+     let docName = $('#docName').val();
+     let symptom = $("#symptom").val();
+     let description = doctorLookup.getDoctors(docName, symptom);
+  
+        description.then(function(response){
 
-        .then(function(response){
-          let displayDocs = JSON.parse(response);
-          let displayDocsHtml = "";
-          if(displayDocs.data.length == 0){
-              displayDocsHtml = "I'm sorry. Your search criteria did not return any results :( "
+           if(response.data.length > 0) {
+
+            $("#results").text("");
+
+            for(let i= 0; i<response.data.length; i++)
+            {
+              $("#results").append("<img src='"+response.data[i].profile.image_url+"' style='float: left; margin-right: 10px'>" +
+              "<p>"+
+              "<b>"+response.data[i].profile.first_name+" "+response.data[i].profile.last_name+"</b> " + response.data[i].profile.title + "<br>" + 
+              "Accepting new patients: " + response.data[i].practices[0].accepts_new_patients + "<br>" +
+              "Phone: " + response.data[i].practices[0].phones[0].number + "<br>" +"Website:" + response.data[i].practices[0].website + "<br>" +
+              response.data[i].practices[0].visit_address.street + "<br>" +
+              response.data[i].practices[0].visit_address.city + " " + response.data[i].practices[0].visit_address.state + " " +
+              response.data[i].practices[0].visit_address.zip + "</p><hr>");
+            }
+
           } else {
-              for(let i = 0; i < displayDocs.data.length; i++){
-                  displayDocsHtml += parseDoc(displayDocs, i);
-              }
+            $("#results").text("I'm sorry. There are no doctors that match your search criteria :( ")
           }
-          $('#displayDocs').append(displayDocsHtml);
       });
   });
-
+});
